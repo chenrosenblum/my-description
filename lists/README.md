@@ -9,7 +9,6 @@
 **Parameters**
 | Name     | Range | DefaultValue | IsRequired | PassedBy |
 | ---------|-------|--------------|------------|----------|
-| list_ids | none |    none      |     No     | UrlQuery  |
+| list_ids | none  |    none      |     No     | UrlQuery |
   
   *A comma separated list of List IDs to be retrived.*
-| list_ids |  none |    none      |     No     | UrlQuery
