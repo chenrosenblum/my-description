@@ -12,9 +12,9 @@
   
   | Name     | Description | PassedBy  | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
   | ---------|-------------|-----------|-------------|----------|--------------|----------------|-----------------------------------|
-  | list_ids | list of ListID's to be retrieve | Url query | list_ids=123456,78910 | none     | none         | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" | When used with "limit" or "offset" results are unpredictable
-  | limit  | Maximum number of Lists to be retrived | Url query | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
-  | offset | The position to start the count of "limit" from | Url query | offset=1500 | offset >= 0     | 0         | |   
+  | list_ids | list of ListID's to be retrieved | Url query | list_ids=123456,78910 | none     | none         | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" | When used with "limit" or "offset" results are unpredictable
+  | limit  | Maximum number of Lists to be retrieved | Url query | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
+  | offset | The position to start the count of "limit" from | Url query | offset=3 | offset >= 0     | 0         | |   
 
 **Response Example:**
 
@@ -104,7 +104,7 @@
 
 ## Update a list - By "PUT" request
 
-**URL:** http://api.responder.co.il/main/lists/ + list_id_to_update
+**URL:** http://api.responder.co.il/main/lists/ + listIdToUpdate
 
 **Method:** Put
 
@@ -152,7 +152,7 @@
 
 ## Delete a list - By "DELETE" request
 
-**URL:** http://api.responder.co.il/main/lists/ + list_id_to_delete
+**URL:** http://api.responder.co.il/main/lists/ + listIdToDelete
 
 **Method:** Delete
 
