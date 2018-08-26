@@ -4,6 +4,8 @@
 
 **URL:** http://api.responder.co.il/main/lists
 
+**METHOD:** Get
+
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
 **Parameters (Optional):**
@@ -55,13 +57,17 @@
 
 **URL:** http://api.responder.co.il/main/lists
 
+**METHOD:** Post
+
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
 **Parameter (Required!):**
   
   | Name     | Description | PassedBy  | Example | NOTE! |
   | ---------|-------------|-----------|---------|-------|
-  | info | Json object with List's data | Post data | See bellow the full Json example | The Json object has to be sent in json-encode variation
+  | info | Json object with List's data | Post data | See bellow the full Json example |
+
+*In post-data: The Json object has to be sent in json-encode variation*
 
 **Json object of List's data Example:**
         
@@ -92,5 +98,53 @@
        "LIST_ID" : 123456789,
        "INVALID_EMAIL_NOTIFY" : ["second@responder"],
        "INVALID_LIST_IDS" : [123458],
+       "ERRORS" : []
+    }
+    
+
+## Update list - By "PUT" request
+
+**URL:** http://api.responder.co.il/main/lists/ + list_id_to_update
+
+**METHOD:** Put
+
+**Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
+
+**Parameter (Required!):**
+  
+  | Name     | Description | PassedBy  | Example | NOTE! |
+  | ---------|-------------|-----------|---------|-------|
+  | info | Json object with List's data to update | Post data | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
+  
+*In post-data: The Json object has to be sent in json-encode variation*
+
+**Json object of List's data Example:**
+        
+        {
+           "DESCRIPTION" : "The new description for the List",
+           "REMOVE_TITLE" : "See you!",
+           "SITE_NAME" : "Responder!",
+           "SITE_URL" : "http://www.esponder.co.il",
+           "LOGO" : "http://www.responder.co.il/images/wn_06.gif",
+           "SENDER_NAME" : "Someone",
+           "SENDER_EMAIL" : "someone@responder.co.il",
+           "SENDER_ADDRESS" : "Somewhere At Responder",
+           "NAME" : "english_name",
+           "AUTH_MAIL_SUBJECT" : "",
+           "AUTH_MAIL_BODY" : "",
+           "AUTH_MAIL_LINK" : "",
+           "AUTH_MAIL_DIR" : "",
+           "AUTH_MAIL_PAGE" : "",
+           "AUTH_MAIL_FORM" : "",
+           "AUTH_MAIL_MANUAL" : "",
+           "EMAIL_NOTIFY" : ["first@responder","second@responder.co.il"],
+           "AUTOMATION" : [999009]
+        }
+
+**Response Example:**
+
+    {
+       "INVALID_EMAIL_NOTIFY" : [],
+       "INVALID_LIST_IDS" : [],
        "ERRORS" : []
     }
