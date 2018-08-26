@@ -8,8 +8,7 @@
 
 **Parameters**
   
-  | Name     | Range    | DefaultValue | IsRequired | PassedBy  |
-  | ---------|----------|--------------|------------|-----------|
-  | list_ids | none     | none         | No         | Url query |
+  | Name     | Range    | DefaultValue | IsRequired | PassedBy  | Example     | Invalid Values | NOTE!                             |
+  | ---------|----------|--------------|------------|-----------|-------------|----------------|-----------------------------------|
+  | list_ids | none     | none         | No         | Url query |             | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" |NOTE! when used with "limit" or "offset" results are unpredictable
   
-  *A comma separated list of List IDs to be retrived.*
