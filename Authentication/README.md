@@ -1,5 +1,7 @@
 # Authenticated
 
+**If you are a new at RavMesser API - Please call our support to get your access tokens: 03-7177777**
+
 ## Auth data - for verify and secure the connection and the user's information.
 
 
@@ -24,7 +26,4 @@
 **Authorization header - Example:**
 
     Authorization: c_key=AJVKJLKDlf6SDSHJ47JE33K506JG59J6,c_secret=521b73bfc63fefbce0ae23ad872d9c99,u_key=SDDGY439KDFLG23432OW94K530GLEKT0,u_secret=8f6c248d9c5cfae704a0a9849d4ea0ac,nonce=3153910c36975aa44fe770be72d3bfd3,timestamp=1535283995
-
-        
-**If you are a new at RavMesser API - Please call our support to get your access tokens: 03-7177777**
 
