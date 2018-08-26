@@ -1,18 +1,19 @@
 # Authenticated
 
-## Auth data - for verify and the secure connection and the user's information.
+## Auth data - for verify and secure the connection and the user's information.
+
 
 
 **Parameters to be send in "Authorization" header:**
   
-  | Name     | Description                       | What is it used for?|
-  | ---------|-----------------------------------|-----------|
+  | Name     | Description                           | What is it used for?|
+  | ---------|---------------------------------------|-----------|
   | c_key | The client's key | Identify the specific connection for RavMesser API
-  | c_secret  | md5(The client's secret + nonce )| Secure the specific connection authentication for RavMesser API
+  | c_secret  | md5(The client's secret + nonce )| Secure the connection
   | u_key | The user's key | Identify the user of RavMesser
-  | u_secret | md5(The user's secret + nonce )| Secure the user authentication of RavMesser
+  | u_secret | md5(The user's secret + nonce )| Secure the user's data
   | nonce | Nonce = random number which is unique for each request| Make sure no request will repeat itself
-  | timestamp | Current time in "timestamp" format | Make sure the request is not been used long time after it was created
+  | timestamp | Current time in "timestamp" format | Make sure the request is not been used a while after it was created
   
 **Important to know:**
 
