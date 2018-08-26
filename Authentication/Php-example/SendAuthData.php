@@ -26,3 +26,4 @@ function createAuthDataHeader(){
         .',nonce='.urlencode($nonce)
         .',timestamp='.urlencode($timestamp);
 }
+
