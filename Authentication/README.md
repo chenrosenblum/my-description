@@ -1,6 +1,6 @@
 # Authenticated
 
-## Auth data - for verify the connection and the user data in "Authorization" headers
+## Auth data - for verify and the connection and the user data in "Authorization" headers
 
 
 **Parameters to be concat in header:**
@@ -11,12 +11,13 @@
   | c_secret  | md5(The client's secret + nonce )| Secure the specific connection authentication for RavMesser API
   | u_key | The user's key | Identify the user of RavMesser
   | u_secret | md5(The user's secret + nonce )| Secure the user authentication of RavMesser
-  | nonce | Nonce = random number which is unique to each of request| Make sure no request will repeat itself
-  | timestamp | Current time in "timestamp" format | Make sure the request is not been used long time after it qas created
+  | nonce | Nonce = random number which is unique for each request| Make sure no request will repeat itself
+  | timestamp | Current time in "timestamp" format | Make sure the request is not been used long time after it was created
   
 **Important to know:**
 
 *The parameters have to be separated in ',' sign*
+
 *Each parameter has to be url-encoded*
 
 **Authorization header - Example:**
