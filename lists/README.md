@@ -8,8 +8,8 @@
 
 **Parameters**
   
-  | Name     | Range    | DefaultValue |
-  | ---------|----------|--------------|
-  | list_ids | none     | none         |
+  | Name     | Range    | DefaultValue | IsRequired | PassedBy  |
+  | ---------|----------|--------------|------------|-----------|
+  | list_ids | none     | none         | No         | Url query |
   
   *A comma separated list of List IDs to be retrived.*
