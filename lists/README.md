@@ -158,7 +158,7 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameter: None**
+**Parameters:** None
 
 **Response Example:**
 
