@@ -4,7 +4,7 @@
 
 **URL:** http://api.responder.co.il/main/lists
 
-**METHOD:** Get
+**Method:** Get
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
@@ -53,18 +53,18 @@
     
     
 
-## Create list - By "POST" request
+## Create a list - By "POST" request
 
 **URL:** http://api.responder.co.il/main/lists
 
-**METHOD:** Post
+**Method:** Post
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
 **Parameter (Required!):**
   
-  | Name     | Description | PassedBy  | Example | NOTE! |
-  | ---------|-------------|-----------|---------|-------|
+  | Name     | Description | PassedBy  | Example |
+  | ---------|-------------|-----------|---------|
   | info | Json object with List's data | Post data | See bellow the full Json example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
@@ -102,11 +102,11 @@
     }
     
 
-## Update list - By "PUT" request
+## Update a list - By "PUT" request
 
 **URL:** http://api.responder.co.il/main/lists/ + list_id_to_update
 
-**METHOD:** Put
+**Method:** Put
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
@@ -147,4 +147,21 @@
        "INVALID_EMAIL_NOTIFY" : [],
        "INVALID_LIST_IDS" : [],
        "ERRORS" : []
+    }
+    
+
+## Delete a list - By "DELETE" request
+
+**URL:** http://api.responder.co.il/main/lists/ + list_id_to_delete
+
+**Method:** Delete
+
+**Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
+
+**Parameter: None**
+
+**Response Example:**
+
+    {
+       "DELETED_LIST_ID" : 654987
     }
