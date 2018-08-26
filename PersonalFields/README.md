@@ -1,6 +1,6 @@
-# Lists
+# Personal Fields
 
-## Retrieve personal-fields - By "GET" request
+## Retrieve personal fields - By "GET" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /personal_fields
 
