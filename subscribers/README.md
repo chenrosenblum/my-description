@@ -10,14 +10,14 @@
 
 **Parameters (Optional):**
   
-  | Name     | Description | PassedBy  | Example     | Range    | DefaultValue | Invalid Values |
-  | ---------|-------------|-----------|-------------|----------|--------------|----------------|
-  | limit | Maximum number of subscribers to be retrieved. | Url query | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
-  | offset  | The position to start the count of "limit" from | Url query | offset=1500 | offset >= 0     | 0         |
-  | dir | The order of the subscribers. For "dir=0" the subscribers will be in ascending order according to subscription date. For "dir=1" the subscribers will be in descending order according to subscription date.  | Url query | dir=1 | dir=0 / dir=1     | 0         | |   
-  | subscriber_id  | The identity of specific subscriber (Value can be either id or email) | Url query | subscriber_id=123456 / subscriber_id=israeli@gmail.com  | any number or string    | none         | |   
-  | min_join_date  | The minimum for subscription date of subscriber | Url query | min_join_date=2015-01-01 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format     | none         | If parameter is not a valid date / format - error message will be returned | 
-  | max_join_date  | The maximum for subscription date of subscriber | Url query | max_join_date=2018-06-30 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format     | none         | If parameter is not a valid date / format - error message will be returned |
+  | Name     | Description | PassedBy  | Example     | Range    | Invalid Values |
+  | ---------|-------------|-----------|-------------|----------|----------------|
+  | limit | Maximum number of subscribers to be retrieved. | Url query | limit=100 | 0 <= limit <= 500     | If parameter is not in range - default value will be used | 
+  | offset  | The position to start the count of "limit" from | Url query | offset=1500 | offset >= 0     | 
+  | dir | The order of the subscribers. For "dir=0" the subscribers will be in ascending order according to subscription date. For "dir=1" the subscribers will be in descending order according to subscription date.  | Url query | dir=1 | dir=0 / dir=1     | |   
+  | subscriber_id  | The identity of specific subscriber (Value can be either id or email) | Url query | subscriber_id=123456 / subscriber_id=israeli@gmail.com  | any number or string    | |   
+  | min_join_date  | The minimum for subscription date of subscriber | Url query | min_join_date=2015-01-01 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format     | If parameter is not a valid date / format - error message will be returned | 
+  | max_join_date  | The maximum for subscription date of subscriber | Url query | max_join_date=2018-06-30 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format     | If parameter is not a valid date / format - error message will be returned |
 
 **Response Example:**
 
