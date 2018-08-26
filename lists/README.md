@@ -7,8 +7,10 @@
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
 **Parameters**
-| Name     | Range | DefaultValue | IsRequired | PassedBy |
-| ---------|-------|--------------|------------|----------|
-| list_ids | none  |    none      |     No     | UrlQuery |
+  
+  | Day     | Meal    | Price |
+  | --------|---------|-------|
+  | Monday  | pasta   | $6    |
+  | Tuesday | chicken | $8    |
   
   *A comma separated list of List IDs to be retrived.*
