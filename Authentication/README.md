@@ -1,9 +1,9 @@
 # Authenticated
 
-## Auth data - for verify and the connection and the user data in "Authorization" headers
+## Auth data - for verify and the secure connection and the user's information.
 
 
-**Parameters to be concat in header:**
+**Parameters to be send in "Authorization" header:**
   
   | Name     | Description                       | What is it used for?|
   | ---------|-----------------------------------|-----------|
