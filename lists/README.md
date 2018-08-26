@@ -8,13 +8,13 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameters (Optional):**
+**Parameters (Optional) - Passed By Url query:**
   
-  | Name     | Description | PassedBy  | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
-  | ---------|-------------|-----------|-------------|----------|--------------|----------------|-----------------------------------|
-  | list_ids | list of ListID's to be retrieved | Url query | list_ids=123456,78910 | none     | none         | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" | When used with "limit" or "offset" results are unpredictable
-  | limit  | Maximum number of Lists to be retrieved | Url query | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
-  | offset | The position to start the count of "limit" from | Url query | offset=3 | offset >= 0     | 0         | |   
+  | Name     | Description | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
+  | ---------|-------------|-------------|----------|--------------|----------------|-----------------------------------|
+  | list_ids | list of ListID's to be retrieved | list_ids=123456,78910 | none     | none         | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" | When used with "limit" or "offset" results are unpredictable
+  | limit  | Maximum number of Lists to be retrieved | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
+  | offset | The position to start the count of "limit" from | offset=3 | offset >= 0     | 0         | |   
 
 **Response Example:**
 
@@ -61,11 +61,11 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameter (Required!):**
+**Parameter (Required!) - Passed By Post data:**
   
-  | Name     | Description | PassedBy  | Example |
-  | ---------|-------------|-----------|---------|
-  | info | Json object with List's data | Post data | See bellow the full Json example |
+  | Name     | Description | Example |
+  | ---------|-------------|---------|
+  | info | Json object with List's data | See bellow the full Json example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -110,11 +110,11 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameter (Required!):**
+**Parameter (Required!) - Passed By Post data:**
   
-  | Name     | Description | PassedBy  | Example | NOTE! |
-  | ---------|-------------|-----------|---------|-------|
-  | info | Json object with List's data to update | Post data | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
+  | Name     | Description | Example | NOTE! |
+  | ---------|-------------|---------|-------|
+  | info | Json object with List's data to update | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
   
 *In post-data: The Json object has to be sent in json-encode variation*
 

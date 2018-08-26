@@ -14,7 +14,7 @@
   | ---------|-------------|-------------|------------------------|
   | limit | Maximum number of subscribers to be retrieved. | limit=100 | 0 <= limit <= 500. If parameter is not in range - default value will be used | 
   | offset  | The position to start the count of "limit" from | offset=1500 | offset >= 0
-  | dir | The order of the subscribers. 0 = ascending order, 1 = descending order - according to subscription date.  | dir=1 | 0 /1     | |   
+  | dir | The order of the subscribers. 0 = ascending order, 1 = descending order - according to subscription date.  | dir=1 | 0 / 1     | |   
   | subscriber_id  | The identity of specific subscriber (Value can be either id or email) | subscriber_id=123456 / subscriber_id=israeli@gmail.com  | any number or string    | |   
   | min_join_date  | The minimum for subscription date of subscriber | min_join_date=2015-01-01 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format. If parameter is not a valid date / format - error message will be returned | 
   | max_join_date  | The maximum for subscription date of subscriber | max_join_date=2018-06-30 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format. If parameter is not a valid date / format - error message will be returned |
@@ -48,11 +48,11 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameter (Required!):**
+**Parameter (Required!) - Passed By Post data:**
   
-  | Name     | Description | PassedBy  | Example |
-  | ---------|-------------|-----------|---------|
-  | info | Json object with Subscribers' data | Post data | See bellow the full Json example |
+  | Name     | Description | Example |
+  | ---------|-------------|---------|
+  | info | Json object with Subscribers' data | See bellow the full Json example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -104,11 +104,11 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameter (Required!):**
+**Parameter (Required!) - Passed By Post data:**
   
-  | Name     | Description | PassedBy  | Example | NOTE! |
-  | ---------|-------------|-----------|---------|-------|
-  | info | Json object with Subscribers' data to update | Post data | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
+  | Name     | Description | Example | NOTE! |
+  | ---------|-------------|---------|-------|
+  | info | Json object with Subscribers' data to update | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
   
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -158,12 +158,12 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameters (Required!):**
+**Parameters (Required!) - Passed By Post data:**
 
-  | Name     | Description | PassedBy  | Example     |
-  | ---------|-------------|-----------|-------------|
-  | method | "delete" value has to be passed | Post data | method="delete" | 
-  | subscribers  | Array of IDs and / or email address to be deleted | Post data | see example in list bellow |
+  | Name     | Description | Example     |
+  | ---------|-------------|-------------|
+  | method | "delete" value has to be passed | method="delete" | 
+  | subscribers  | Array of IDs and / or email address to be deleted | see example in list bellow |
   
 **Array of IDs and / or email - Example:**
         
