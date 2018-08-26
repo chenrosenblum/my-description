@@ -1,6 +1,6 @@
 # Subscribers
 
-## Retrieve subscribers - By "GET" request
+## Retrieve subscribers from list - By "GET" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 
@@ -40,7 +40,7 @@
         }
     ]
 
-## Create subscribers - By "POST" request
+## Create subscribers in list - By "POST" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 
@@ -96,7 +96,7 @@
     }
     
 
-## Update subscribers - By "PUT" request
+## Update subscribers in list - By "PUT" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 
@@ -150,7 +150,7 @@
       }
     }
     
-## Delete Subscribers - By "POST" request
+## Delete Subscribers from list - By "POST" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 

@@ -1,8 +1,8 @@
 # Subscribers
 
-## Retrieve subscribers - By "GET" request
+## Retrieve subscribers of view - By "GET" request
 
-**URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
+**URL:** http://api.responder.co.il/main/lists/ + listId + /views/ + viewId + /subscribers
 
 **Method:** Get
 
@@ -14,35 +14,26 @@
   | ---------|-------------|-------------|------------------------|
   | limit | Maximum number of subscribers to be retrieved. | limit=100 | 0 <= limit <= 500. If parameter is not in range - default value will be used | 
   | offset  | The position to start the count of "limit" from | offset=1500 | offset >= 0
-  | dir | The order of the subscribers. 0 = ascending order, 1 = descending order - according to subscription date.  | dir=1 | 0 / 1     | |   
-  | subscriber_id  | The identity of specific subscriber (Value can be either id or email) | subscriber_id=123456 / subscriber_id=israeli@gmail.com  | any number or string    | |   
-  | min_join_date  | The minimum for subscription date of subscriber | min_join_date=2015-01-01 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format. If parameter is not a valid date / format - error message will be returned | 
-  | max_join_date  | The maximum for subscription date of subscriber | max_join_date=2018-06-30 00:00 | Value has to be a valid date in "YYYY-MM-DD HH:mm" format. If parameter is not a valid date / format - error message will be returned |
 
 **Response Example:**
 
-    [
-        {
-            "ID":"123456",
-            "NAME":"Subscriber name",
-            "EMAIL":"subscriber@gmail.com",
-            "PHONE":"0544444444",
-            "STATUS":"1",
-            "STATUS_NUM":"0",
-            "DAY":"10",
-            "OFFSET":"0",
-            "LAST_OPEN":"0",
-            "PERSONAL_FIELDS":[
-                {
-                   123456 : "Responder",
-                   654321 : "Newsletter Service"
-                }]
-        }
-    ]
+    {
+       "VIEW_ID" : 333
+       "VIEWS" : [
+          {
+             "ID" : 654987,
+             "DATE" : "2012-04-22"
+          },
+          {
+             "ID" : 654988,
+             "DATE" : "2011-03-18"
+          }
+       ]
+    }
 
-## Create subscribers - By "POST" request
+## Associate existing subscribers to view - By "POST" request
 
-**URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
+**URL:** http://api.responder.co.il/main/lists/ + listId + /views/ + viewId + /subscribers
 
 **Method:** Post
 
@@ -52,105 +43,24 @@
   
   | Name     | Description | Example |
   | ---------|-------------|---------|
-  | info | Json object with Subscribers' data | See bellow the full Json example |
+  | subscribers | Array of Subscriber IDs | See bellow the full Object example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
-**Json object of List's data Example:**
+**Subscriber IDs Example:**
         
-        [
-           {
-              "NAME" : "John Smith",
-              "EMAIL" : "johnsmith@gmail.com",
-              "PHONE" : "01-23456789",
-              "DAY" : 12,
-              "NOTIFY" => 2
-           },
-           {
-              "NAME" : "Bob Jones",
-              "EMAIL" : "bobjones@yahoo.com",
-              "PHONE" : "09-87654321",
-              "PERSONAL_FIELDS" : {
-                 3 : "Tel Aviv",
-                 49 : "Honda Civic"
-              }
-              "NOTIFY" => 0
-           }
-        ]
+        ["32","45","888"]
 
 **Response Example:**
 
     {
-       "SUBSCRIBERS_CREATED" : [123],
-       "EMAILS_INVALID" : [],
-       "EMAILS_EXISTING" : ["johnsmith@gmail.com"],
-       "EMAILS_BANNED" : [],
-       "PHONES_INVALID" : [],
-       "PHONES_EXISTING" : [],
-       "BAD_PERSONAL_FIELDS" : {
-          123 : {
-             3 : "Tel Aviv"
-          }
-       },
+       "VIEW_SUBSCRIBERS_CREATED" : ["32"],
+       "VIEW_SUBSCRIBERS_EXISTING" : ["45"],
+       "INVALID_SUBSCRIBERS_IDS" : ["888"],
        "ERRORS" : []
     }
     
-
-## Update subscribers - By "PUT" request
-
-**URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
-
-**Method:** Put
-
-**Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
-
-**Parameter (Required!) - Passed By Post data:**
-  
-  | Name     | Description | Example | NOTE! |
-  | ---------|-------------|---------|-------|
-  | info | Json object with Subscribers' data to update | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
-  
-*In post-data: The Json object has to be sent in json-encode variation*
-
-**Json object of List's data Example:**
-        
-        [
-           {
-              "IDENTIFIER" : "js@gmail.com",
-              "EMAIL" : "johnsmith@gmail.com",
-              "NAME" : "John Smith",
-              "PHONE" : "01-23456789",
-              "DAY" : 12
-           },
-           {
-              "IDENTIFIER" : 123,
-              "NAME" : "Bob Jones",
-              "PHONE" : "09-87654321",
-              "PERSONAL_FIELDS" : {
-                 3 : "Tel Aviv",
-                 49 : "Honda Civic"
-              }
-           }
-        ]
-
-**Response Example:**
-
-    {
-       "SUBSCRIBERS_UPDATED" : [123],
-       "INVALID_SUBSCRIBER_IDENTIFIERS" : [],
-       "EMAILS_INVALID" : [],
-       "EMAILS_EXISTED" : ["johnsmith@gmail.com"],
-       "EMAILS_BANNED" : [],
-       "PHONES_INVALID" : [],
-       "PHONES_EXISTING" : [],
-       "BAD_PERSONAL_FIELDS" : {
-         123 : {
-            3 : "Tel Aviv"
-         }
-      }
-    }
-    
-## Delete Subscribers - By "POST" request
+## Delete Subscribers from view - By "POST" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 
@@ -163,7 +73,7 @@
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
   | method | "delete" value has to be passed | method="delete" | 
-  | subscribers  | Array of IDs and / or email address to be deleted | see example in list bellow |
+  | subscribers  | Array of IDs and / or email address to be deleted from view | see example in list bellow |
   
 **Array of IDs and / or email - Example:**
         
@@ -180,8 +90,8 @@
     {
        "INVALID_SUBSCRIBER_IDS" : [123],
        "INVALID_SUBSCRIBER_EMAILS" : ["not@valid", "email_not@list.com"],
-       "DELETED_SUBSCRIBERS" : {
-          4433 : "responder@responder.co.il",
-          456 : "someone@responder.co.il"
+       "DELETED_VIEW_SUBSCRIBERS" : {
+          "4433" : "responder@responder.co.il",
+          "456" : "someone@responder.co.il"
        }
     }
