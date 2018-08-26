@@ -1,6 +1,6 @@
 # Personal Fields
 
-## Retrieve personal fields - By "GET" request
+## Retrieve personal fields of list - By "GET" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /personal_fields
 
@@ -8,7 +8,13 @@
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
-**Parameters:** None
+**Parameters (Optional) - Passed by Url query:** 
+
+  | Name     | Description | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
+  | ---------|-------------|-------------|----------|--------------|----------------|-----------------------------------|
+  | limit  | Maximum number of Views to be retrieved | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
+  | offset | The position to start the count of "limit" from | offset=3 | offset >= 0     | 0         | |   
+
   
 **Response Example:**
 
