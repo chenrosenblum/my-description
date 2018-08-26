@@ -19,9 +19,9 @@
   | offset  | The position to start the count of "limit" from | offset=1500 | offset >= 0
   | type | Array of message's type to be retrieved.  | see Json example bellow | 0 <=  type <= 4     | |   
 
-**types array parameter Example:**
+**Type's array Example:**
 
-        ["0","2"]
+    ["0","2"]
 
 **Response Example:**
 
@@ -137,7 +137,7 @@
     }
 
 
-## Send message - By "POST" request
+## Send a message - By "POST" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /messages/ + messageId
 
