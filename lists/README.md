@@ -8,9 +8,8 @@
 
 **Parameters**
   
-  | Day     | Meal    | Price |
-  | --------|---------|-------|
-  | Monday  | pasta   | $6    |
-  | Tuesday | chicken | $8    |
+  | Name     | Range    | DefaultValue |
+  | ---------|----------|--------------|
+  | list_ids | none     | none         |
   
   *A comma separated list of List IDs to be retrived.*
