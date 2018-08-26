@@ -8,7 +8,7 @@
 
 **Parameters**
   
-  | Name     | Range    | DefaultValue | PassedBy  | Example     | Invalid Values | NOTE!                             |
-  | ---------|----------|--------------|-----------|-------------|----------------|-----------------------------------|
-  | list_ids | none     | none         | Url query | list_ids=123456,78910 | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" |NOTE! when used with "limit" or "offset" results are unpredictable
+  | Name     | PassedBy  | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
+  | ---------|-----------|-------------|----------|--------------|----------------|-----------------------------------|
+  | list_ids | Url query | list_ids=123456,78910 | none     | none         | Invalid ID's will be returned in a JSON array of "INVALID_LIST_IDS" |NOTE! when used with "limit" or "offset" results are unpredictable
   
