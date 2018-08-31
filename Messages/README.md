@@ -26,9 +26,36 @@
 **Response Example:**
 
     [
-        {
-            ...to complete after testing....
-        }
+      {
+        "ID": "1234567",
+        "TYPE": "1",
+        "MODIFIED": "0",
+        "SUBJECT": "message-subject",
+        "BODY_TYPE": "5",
+        "BODY": "<html>",
+        "BODY_ALT": "",
+        "BODY_XML": "",
+        "VIEW_ID": "0",
+        "XTEMPLATE_ID": "0",
+        "AB_TESTING_ID": "0",
+        "AB_TESTING_PERCENT": "0",
+        "REFRESH_LIST": false,
+        "LISTS_INCLUDED": [],
+        "LISTS_EXCLUDED": [],
+        "EXT_MSG_OPENED": "0",
+        "POSTED": null,
+        "SMS_POSTED": null,
+        "FAILED": null,
+        "OPENED": null,
+        "RETURNED": null,
+        "REMOVED": null,
+        "COMPLAINED": null,
+        "LINKED": null,
+        "INTEVAL": "0",
+        "ORDER": "0",
+        "SEND_DATE": null,
+        "IN_QUEUE": "0"
+      }
     ]
     
 
