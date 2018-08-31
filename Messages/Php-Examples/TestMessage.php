@@ -2,11 +2,11 @@
 
 function createAuthDataHeader()
 {
-    $client_key = 'A7AE8C040947C417F5F2B0B05EB5B292';
-    $client_secret = 'E0744D90487801C0C70AB2671CA1A79D';
+    $client_key = '';
+    $client_secret = '';
 
-    $user_key = 'AF0C3838717EA6AB65AF893AFD8C83A3';
-    $user_secret = '7F79709C2F37BB7AADC3FC6D2AB08245';
+    $user_key = '';
+    $user_secret = '';
     $timestamp = time();
     $nonce = md5(microtime() . mt_rand());
 
