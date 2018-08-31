@@ -90,6 +90,7 @@
 **Response Example:**
 
     {
+       "ERRORS":[],
        "MESSAGE_ID": 123456
     }
  
