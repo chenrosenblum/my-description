@@ -75,7 +75,7 @@
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
-**Json object of List's data Example:**
+**Json object of Message's data Example:**
 
        {
           "TYPE" : "1", // 1 for "messer boded", 0 for "sidrat messarim", 2 for "mevusas ta'arich"
@@ -95,7 +95,7 @@
     }
  
 
-## Update messages in list - By "PUT" request
+## Update message in list - By "PUT" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /messages/ + messageId
 
@@ -105,15 +105,16 @@
 
 **Parameter (Required!) - Passed By Post data:**
   
-  | Name     | Description | Example |
-  | ---------|-------------|---------|
-  | info | Json object with Message's data | See bellow the full Json example |
+  | Name     | Description | Example | Notice! |
+  | ---------|-------------|---------|---------|
+  | info | Json object with Message's data | See bellow the full Json example | Json object must have "ID" attribute for applying the update
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
-**Json object of List's data Example:**
+**Json object of Message's data Example:**
 
        {
+          "ID" : "12345", // This attribute is mandatory for update!
           "TYPE" : "1", // 1 for "messer boded", 0 for "sidrat messarim", 2 for "mevusas ta'arich"
           "BODY_TYPE" : "0", // 0 for regular HTML editor (affects the type of editor used in the website)
           "SUBJECT" : 'message subject2',
