@@ -2,11 +2,11 @@
 
 function createAuthDataHeader()
 {
-    $client_key = '';
-    $client_secret = '';
+    $client_key = 'A7AE8C040947C417F5F2B0B05EB5B292';
+    $client_secret = 'E0744D90487801C0C70AB2671CA1A79D';
 
-    $user_key = '';
-    $user_secret = '';
+    $user_key = 'AF0C3838717EA6AB65AF893AFD8C83A3';
+    $user_secret = '7F79709C2F37BB7AADC3FC6D2AB08245';
     $timestamp = time();
     $nonce = md5(microtime() . mt_rand());
 
@@ -18,7 +18,7 @@ function createAuthDataHeader()
         . ',timestamp=' . urlencode($timestamp);
 }
 
-function send_put_request($url, $data, $headers)
+function send_post_request($url, $data, $headers)
 {
     $ci = curl_init();
 
@@ -34,8 +34,7 @@ function send_put_request($url, $data, $headers)
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
 
-    curl_setopt($ci, CURLOPT_CUSTOMREQUEST, 'PUT');
-
+    curl_setopt($ci, CURLOPT_POST, TRUE);
     if (!empty($data)) {
         curl_setopt($ci, CURLOPT_POSTFIELDS, $data);
     }
@@ -48,20 +47,19 @@ function send_put_request($url, $data, $headers)
 
 //POST - Create a message in list
 $listId = 0;
-$messageId = 12345;
-$http_messages_url = "http://api.responder.co.il/main/lists/$listId/messages/$messageId";
+$messageId = 123456;
+$http_messages_url = "http://api.responder.co.il/main/lists/$listId/messages/$messageId/test";
 
 $headers = array(createAuthDataHeader());
 
 $post_data =
-    "info=" . json_encode(
+    "data=" . json_encode(
         array(
-            "ID" => $messageId,
-            "SUBJECT" => "Message updated by api!",
-            "BODY" => '<html><body><h1>Welcome to my updated message....</h1></body></html>'
+            "name" => "tester name",
+            "email" => "emailForTesting@gmail.com"
         ));
 
-$response = send_put_request($http_messages_url, $post_data, $headers);
+$response = send_post_request($http_messages_url, $post_data, $headers);
 echo $response;
 
 

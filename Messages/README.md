@@ -134,7 +134,7 @@
 
 ## Test sending a message - By "POST" request
 
-**URL:** http://api.responder.co.il/main/lists/ + listId + /messages/test
+**URL:** http://api.responder.co.il/main/lists/ + listId + /messages/ + messageId + /test
 
 **Method:** Post
 
