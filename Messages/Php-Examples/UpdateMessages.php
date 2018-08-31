@@ -46,7 +46,7 @@ function send_put_request($url, $data, $headers)
     return $response;
 }
 
-//POST - Create a message in list
+//Put - Update a message in list
 $listId = 0;
 $messageId = 12345;
 $http_messages_url = "http://api.responder.co.il/main/lists/$listId/messages/$messageId";

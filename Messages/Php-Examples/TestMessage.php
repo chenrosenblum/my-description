@@ -45,7 +45,7 @@ function send_post_request($url, $data, $headers)
     return $response;
 }
 
-//POST - Create a message in list
+//POST - Test a message in list
 $listId = 0;
 $messageId = 123456;
 $http_messages_url = "http://api.responder.co.il/main/lists/$listId/messages/$messageId/test";
