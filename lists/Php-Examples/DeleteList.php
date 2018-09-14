@@ -35,7 +35,10 @@ function send_delete_request($url, $headers)
 
 $http_lists_url = 'http://api.responder.co.il/main/lists';
 $list_id = 123456;
+
 $headers = array(createAuthDataHeader());
+
 $response = send_delete_request($http_lists_url."/{$list_id}", $headers);
+
 
 

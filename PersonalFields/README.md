@@ -10,8 +10,8 @@
 
 **Parameters (Optional) - Passed by Url query:** 
 
-  | Name     | Description | Example     | Range    | DefaultValue | Invalid Values | NOTE!                             |
-  | ---------|-------------|-------------|----------|--------------|----------------|-----------------------------------|
+  | Name     | Description | Example     | Range    | DefaultValue | Invalid Values |
+  | ---------|-------------|-------------|----------|--------------|----------------|
   | limit  | Maximum number of Views to be retrieved | limit=100 | 0 <= limit <= 500     | 500         | If parameter is not in range - default value will be used | 
   | offset | The position to start the count of "limit" from | offset=3 | offset >= 0     | 0         | |   
 
@@ -26,6 +26,7 @@
              "NAME" : "City",
              "DEFAULT_VALUE" : "Tel Aviv",
              "DIR" : "rtl",
+             "HIDDEN":"0",
              "TYPE" : 0
           },
           {
@@ -33,6 +34,7 @@
              "NAME" : "Birth Date",
              "DEFAULT_VALUE" : "",
              "DIR" : "ltr",
+             "HIDDEN":"1",
              "TYPE" : 1
           }
        ]
@@ -125,7 +127,7 @@
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /personal_fields
 
-**Method:** Post
+**Method:** Delete
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
@@ -133,8 +135,7 @@
 
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
-  | method | "delete" value has to be passed | method="delete" | 
-  | personal_fields  | Array of personal-field ID's to be deleted | see example in list bellow |
+  | personal_fields  | Array of personal-field ID's to be deleted | see LIST example bellow |
   
 **Array of IDs and / or email - Example:**
         
