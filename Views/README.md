@@ -43,7 +43,7 @@
   
   | Name     | Description | PassedBy  | Example |
   | ---------|-------------|-----------|---------|
-  | personal_fields | Array of Json objects with Views' names | Post data | See bellow the full Json example |
+  | views | Array of Json objects with Views' names | Post data | See bellow the full Json example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -62,7 +62,7 @@
 
     {
        "LIST_ID" : 123456,
-       "CREATED_VIEWS" : [ 4567 , 4568 ]
+       "VIEWS_CREATED" : [ 4567 , 4568 ]
     }
     
 
@@ -76,10 +76,10 @@
 
 **Parameter (Required!):**
   
-  | Name     | Description | PassedBy  | Example | NOTE! |
-  | ---------|-------------|-----------|---------|-------|
-  | personal_fields | Array of Json objects with Views' data to update | Post data | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
-  
+  | Name     | Description | PassedBy  | Example |
+  | ---------|-------------|-----------|---------|
+  | views | Array of Json objects with Views' data to update | Post data | See bellow the full Json example |
+
 *In post-data: The Json object has to be sent in json-encode variation*
 
 **Json object of List's data Example:**

@@ -18,7 +18,7 @@ function createAuthDataHeader()
         . ',timestamp=' . urlencode($timestamp);
 }
 
-function send_delete_request($url, $data, $headers)
+function send_put_request($url, $data, $headers)
 {
     $ci = curl_init();
 
@@ -33,29 +33,39 @@ function send_delete_request($url, $data, $headers)
     curl_setopt($ci, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
-    curl_setopt($ci, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    curl_setopt($ci, CURLOPT_URL, $url);
+
+    curl_setopt($ci, CURLOPT_CUSTOMREQUEST, 'PUT');
+
     if (!empty($data)) {
         curl_setopt($ci, CURLOPT_POSTFIELDS, $data);
     }
 
+    curl_setopt($ci, CURLOPT_URL, $url);
     $response = curl_exec($ci);
     curl_close ($ci);
     return $response;
 }
 
+//PUT - update view in list
 $listId = 0;
 $http_susbscribers_url = "http://api.responder.co.il/main/lists/$listId/views";
 
-$post_data = "views=" . json_encode(
+$post_data =
+    'views=' . json_encode(
         array(
-            array("ID" => 11111)
-        ));
+            array(
+                'ID' => '12345',
+                'NAME' => 'Brand new UPDATED view!'
+            ),
+            array(
+                'ID' => '54321',
+                'NAME' => 'Second brand new UPDATED view!'
+            )
+        )
+    );
 
 $headers = array(createAuthDataHeader());
-
-$response = send_delete_request($http_susbscribers_url, $post_data, $headers);
-
+$response = send_put_request($http_susbscribers_url, $post_data, $headers);
 echo $response;
 
 

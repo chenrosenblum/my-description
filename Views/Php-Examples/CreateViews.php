@@ -18,7 +18,9 @@ function createAuthDataHeader()
         . ',timestamp=' . urlencode($timestamp);
 }
 
-function send_delete_request($url, $data, $headers)
+
+
+function send_post_request($url, $data, $headers)
 {
     $ci = curl_init();
 
@@ -33,30 +35,35 @@ function send_delete_request($url, $data, $headers)
     curl_setopt($ci, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ci, CURLOPT_HEADER, FALSE);
-    curl_setopt($ci, CURLOPT_CUSTOMREQUEST, 'DELETE');
-    curl_setopt($ci, CURLOPT_URL, $url);
+
+    curl_setopt($ci, CURLOPT_POST, TRUE);
     if (!empty($data)) {
         curl_setopt($ci, CURLOPT_POSTFIELDS, $data);
     }
 
+    curl_setopt($ci, CURLOPT_URL, $url);
     $response = curl_exec($ci);
     curl_close ($ci);
     return $response;
 }
 
+//POST - create a new view in list
 $listId = 0;
 $http_susbscribers_url = "http://api.responder.co.il/main/lists/$listId/views";
 
-$post_data = "views=" . json_encode(
+$post_data =
+    'views=' . json_encode(
         array(
-            array("ID" => 11111)
-        ));
+            array(
+                'NAME' => 'Brand new view!'
+            ),
+            array(
+                'NAME' => 'Second brand new view!'
+            )
+        )
+    );
 
 $headers = array(createAuthDataHeader());
-
-$response = send_delete_request($http_susbscribers_url, $post_data, $headers);
-
+$response = send_post_request($http_susbscribers_url, $post_data, $headers);
 echo $response;
-
-
 
