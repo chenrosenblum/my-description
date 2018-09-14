@@ -63,11 +63,11 @@
        "ERRORS" : []
     }
     
-## Delete Subscribers from view - By "POST" request
+## Delete Subscribers from view - By "DELETE" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /views/ + viewId + /subscribers
 
-**Method:** Post
+**Method:** Delete
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
