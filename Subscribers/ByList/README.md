@@ -52,7 +52,7 @@
   
   | Name     | Description | Example |
   | ---------|-------------|---------|
-  | info | Json object with Subscribers' data | See bellow the full Json example |
+  | subscribers | Json object with Subscribers' data | See bellow the full Json example |
 
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -108,7 +108,7 @@
   
   | Name     | Description | Example | NOTE! |
   | ---------|-------------|---------|-------|
-  | info | Json object with Subscribers' data to update | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
+  | subscribers | Json object with Subscribers' data to update | See bellow the full Json example | Updating "EMAIL_NOTIFY" or "AUTOMATION" will delete the previous records!
   
 *In post-data: The Json object has to be sent in json-encode variation*
 
@@ -150,11 +150,11 @@
       }
     }
     
-## Delete Subscribers from list - By "POST" request
+## Delete Subscribers from list - By "DELETE" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
 
-**Method:** Post
+**Method:** Delete
 
 **Authentication:** Auth Data in headers. for more details [click here](https://github.com/chenrosenblum/my-description/tree/master/Authentication/ )
 
@@ -162,7 +162,6 @@
 
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
-  | method | "delete" value has to be passed | method="delete" | 
   | subscribers  | Array of IDs and / or email address to be deleted | see example in list bellow |
   
 **Array of IDs and / or email - Example:**
