@@ -123,7 +123,7 @@
     }
     
 
-## Delete Personal fields in list - By "POST" request
+## Delete Personal fields in list - By "DELETE" request
 
 **URL:** http://api.responder.co.il/main/lists/ + listId + /personal_fields
 
