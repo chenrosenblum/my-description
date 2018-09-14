@@ -17,19 +17,12 @@
 
 **Response Example:**
 
-    {
-       "VIEW_ID" : 333
-       "VIEWS" : [
-          {
-             "ID" : 654987,
-             "DATE" : "2012-04-22"
-          },
-          {
-             "ID" : 654988,
-             "DATE" : "2011-03-18"
-          }
-       ]
-    }
+    [
+        {
+            "ID":"255094007",
+            "DATE":"1536910254"
+        }
+    ]
 
 ## Associate existing subscribers to view - By "POST" request
 
@@ -49,7 +42,17 @@
 
 **Subscriber IDs Example:**
         
-        ["32","45","888"]
+    {
+        "VIEW_SUBSCRIBERS_CREATED":
+                {
+                    "12345677":"subscriberemail@gmail.com",
+                    "77654321":"anothersubemail@gmail.com"
+                },
+        "VIEW_SUBSCRIBERS_EXISTING":[],
+        "INVALID_SUBSCRIBER_IDS":[],
+        "INVALID_SUBSCRIBER_EMAILS":[],
+        "ERRORS":[]}
+    }
 
 **Response Example:**
 
@@ -62,7 +65,7 @@
     
 ## Delete Subscribers from view - By "POST" request
 
-**URL:** http://api.responder.co.il/main/lists/ + listId + /subscribers
+**URL:** http://api.responder.co.il/main/lists/ + listId + /views/ + viewId + /subscribers
 
 **Method:** Post
 
@@ -72,7 +75,6 @@
 
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
-  | method | "delete" value has to be passed | method="delete" | 
   | subscribers  | Array of IDs and / or email address to be deleted from view | see example in list bellow |
   
 **Array of IDs and / or email - Example:**
@@ -90,8 +92,9 @@
     {
        "INVALID_SUBSCRIBER_IDS" : [123],
        "INVALID_SUBSCRIBER_EMAILS" : ["not@valid", "email_not@list.com"],
-       "DELETED_VIEW_SUBSCRIBERS" : {
-          "4433" : "responder@responder.co.il",
-          "456" : "someone@responder.co.il"
-       }
+       "DELETED_VIEW_SUBSCRIBERS" : [
+          "456",
+          "responder@responder.co.il"
+       ]
     }
+

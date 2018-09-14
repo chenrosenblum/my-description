@@ -18,32 +18,49 @@ function createAuthDataHeader()
         . ',timestamp=' . urlencode($timestamp);
 }
 
-function send_get_request($url, $headers)
+
+function send_post_request($url, $data, $headers)
 {
     $ci = curl_init();
+
+    if (!empty($data)) {
+        $headers[] = 'Content-Length: ' . strlen($data);
+        $headers[] = 'Expect:';
+    }
 
     curl_setopt($ci, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ci, CURLOPT_TIMEOUT, 30);
     curl_setopt($ci, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, FALSE);
     curl_setopt($ci, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ci, CURLOPT_HEADER, false);
+    curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ci, CURLOPT_HEADER, FALSE);
+
+    curl_setopt($ci, CURLOPT_POST, TRUE);
+    if (!empty($data)) {
+        curl_setopt($ci, CURLOPT_POSTFIELDS, $data);
+    }
+
     curl_setopt($ci, CURLOPT_URL, $url);
     $response = curl_exec($ci);
-    curl_close($ci);
-
+    curl_close ($ci);
     return $response;
 }
 
+//POST - Associate existing subscribers to view
 
-//GET - Retrieve subscribers from view
 $listId = 0;
 $viewId = 1;
 $http_susbscribers_url = "http://api.responder.co.il/main/lists/$listId/views/$viewId/subscribers";
 
+$post_data = 'subscribers=' . json_encode(
+        array(
+            array("ID" => "111111111"),
+            array("ID" => "222222222")
+        ));
+
 $headers = array(createAuthDataHeader());
 
-$response = send_get_request($http_susbscribers_url, $headers);
+$response = send_post_request($http_susbscribers_url, $post_data, $headers);
 echo $response;
 
 
