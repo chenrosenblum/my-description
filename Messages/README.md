@@ -204,6 +204,5 @@
 
     {
        "INVALID_MESSAGE_IDS" : [45],
-       "DELETED_MESSAGES" : [],
        "DELETED_MESSAGES" : [32, 888]
     }
