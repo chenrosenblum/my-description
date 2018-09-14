@@ -2,7 +2,8 @@
 ![RavMesser](https://raw.githubusercontent.com/chenrosenblum/my-description/master/ravmesser_logo.png)
 # Rav-Messer RestAPI
 
-This is an up to date wrapper for the Powerlink.co.il REST API. we initially found working with the API to be a bit frustrating and hopefully this wrapper will make everything easy for you.
+This is an up to date documentation for RavMesser RestAPI.
+
 
 Please email chen@responder.co.il if you find any bugs .
 
