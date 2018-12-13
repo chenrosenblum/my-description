@@ -39,6 +39,6 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
 
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
-  | user_name | list of ListID's to be retrieved | list_ids=123456,78910 |
-  | url  | Maximum number of Lists to be retrieved | limit=100 |
+  | user_name | Your user-name in RavMesser | my_user |
+  | url  | The URL address that the data has to go into (usually supplied by developer/technical representative of your destination system)  | https://myCRMcompany/incomingWebhooksUrl |
 
