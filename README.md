@@ -8,7 +8,7 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
 
 ## What does it use for? ##
 
-**The Webhook mechanism is used for getting Data from RavMesser whenever subscriber comes from subscription-form.**
+**The Webhook mechanism is used for getting Data from RavMesser whenever subscriber comes from subscription-form or added manually through Rav-Messer system**
 
 
 ## How does the mechanism work? ##
