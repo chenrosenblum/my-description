@@ -5,7 +5,13 @@
 This is an up to date documentation for RavMesser Outgoing-Webhooks.
 
 
-## Getting Data from RavMesser whenever subscriber comes from subscription-form.
+
+## What does it use for? ##
+
+** The Webhook mechanism is used for getting Data from RavMesser whenever subscriber comes from subscription-form. **
+
+
+## How does the mechanism work? ##
 
 **Definition:** The "webhook" definition sets in account level - which mean that any subscription in any list will trigger the Webhook sending mechanism
 
@@ -15,8 +21,8 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
 
 
     {
-       "type": "" //hard code value: 'subscribe' - for user-subscription. 'manual' - for adding subscriber manually RavMesser,
-       "list_ids": "" // the list's that the subscriber added to,
+       "type": "subscriber" //fixed value: 'subscribe' - for user-subscription. 'manual' - for adding subscriber manually through RavMesser system,
+       "list_ids": [123, 456] // the list's that the subscriber added to,
        "email": "subscriber_email_value",
        "name": "subscriber_name_value",
        "phone": "subscriber_phone_value",
@@ -27,6 +33,8 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
     }
 
 
+## What do I need to set my own Webhook? ##
+
 **Parameters for the definition:**
 
   | Name     | Description | Example     |
@@ -34,4 +42,4 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
   | user_name | list of ListID's to be retrieved | list_ids=123456,78910 |
   | url  | Maximum number of Lists to be retrieved | limit=100 |
 
-: 03-717-7777
+** The definition: ** Please call our support ( 03-717-7777 ) with the parameters above or email the support ( support@responder.co.il )
