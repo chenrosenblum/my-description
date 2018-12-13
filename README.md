@@ -35,11 +35,10 @@ This is an up to date documentation for RavMesser Outgoing-Webhooks.
 
 ## What do I need to set my own Webhook? ##
 
-**Parameters for the definition:**
+**Please call our support ( 03-717-7777 ) or email the support ( support@responder.co.il ) with the parameters bellow:**
 
   | Name     | Description | Example     |
   | ---------|-------------|-------------|
   | user_name | list of ListID's to be retrieved | list_ids=123456,78910 |
   | url  | Maximum number of Lists to be retrieved | limit=100 |
 
-** The definition: ** Please call our support ( 03-717-7777 ) with the parameters above or email the support ( support@responder.co.il )
